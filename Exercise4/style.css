@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'OpenSans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVp0bbck.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0b.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body{
+    background-color:#f4f4f4;
+    margin:0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-areas: 
+        'header header header'
+        'nav main aside'
+        'footer footer footer';
+    grid-gap: 10px;
+    font-family: 'OpenSans';
+}
+
+header{
+    grid-area: header;
+    background:rgba(42, 74, 82, 0.85);
+}
+
+header h1{
+    text-align: center;
+    margin: auto;
+    padding: 50px 0;
+    font-size: 2.1em;
+}
+
+header h1 a{
+	color:#ffffff;
+	text-decoration:none;
+}
+
+nav{
+    grid-area: nav;
+}
+
+#nav-bar a{
+    display: block;
+    padding: 2em;
+    background-color: #dfdfdf;
+    border-radius: 30px;
+    text-align: center;
+    margin-bottom: 0.2em;
+    text-decoration: none;
+    color: #000000;
+    width: 6em;
+}
+
+#nav-bar a:hover{
+    color: #ffffff;
+    background-color: rgba(42, 74, 82, 0.85);
+}
+
+#nav-bar ul{
+    list-style-type: none;
+    padding: 10px 50px 0 100px ;
+}
+
+#nav-bar .current a{
+	background-color: rgba(42, 74, 82, 0.85);
+    color: #ffffff;
+	font-weight: bold;
+}
+
+main{
+    grid-area: main;
+}
+
+.flex-sections{
+    display: flex;
+}
+
+.flex-sections p{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.flex-sections h3, .flex-sections h4{
+    padding: 0 20px;
+    margin: 20px 0;
+}
+
+aside{
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    padding: 0 100px 0 80px ;
+    align-items: center;
+}
+
+#quote{
+    font-size: 1.3em;
+    quotes:'“' '”';
+}
+
+.aside-bar p{
+    font-size: 1.1em;
+    padding-bottom: 100px;
+}
+
+#image-figure figcaption, .aside-bar p{
+    max-width: 400px;
+}
+
+footer{
+    grid-area: footer;
+    background-color: rgba(42, 74, 82, 0.85);
+	padding-bottom: 5px;
+	padding-top: 10px;
+	margin-top: 50px;
+}
+
+footer p{
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.2em;
+}

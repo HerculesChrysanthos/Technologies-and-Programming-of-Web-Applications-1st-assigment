@@ -1,0 +1,164 @@
+body{
+    font-family: sans-serif;
+    background-color:#f4f4f4;
+    padding:0;
+    margin:0;
+}
+
+header{
+    background:rgba(0, 174, 255, 0.42);
+    color:#ffffff;
+}
+
+header h1{
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    font-size:35px;
+    text-align:center;
+}
+
+header h1 a:hover {
+    color: #ffffff;
+}
+
+header h1 a{
+	color:#000000;
+	text-decoration:none;
+}
+
+header li{
+	display: inline;
+}
+
+header nav{
+	padding-top:10px;
+    padding-bottom: 10px;
+}
+
+#nav-bar  {
+    text-align: center;
+    font-size:18px;
+    font-weight: bold;
+    padding-left: 0;
+}
+
+#nav-bar a{
+    text-decoration:none;
+}
+
+.item{
+    padding: 0 10px 0 0;
+}
+
+#nav-bar a:link {
+    color: #1ebba3;
+}
+
+#nav-bar a:visited {
+    color: #000000;
+}
+
+#nav-bar a:hover {
+    color: #ffffff;
+}
+
+#nav-bar a:active {
+    color: #ff9800;
+}
+
+article{
+    background-color: rgb(186, 224, 233);
+    width: 70%;
+    margin: 30px auto 0;
+    padding: 20px;
+    border-radius: 15px 50px 30px;
+}
+
+.interests h2{
+    padding-left: 80px;
+}
+
+.interests img{
+    float:left;
+    padding-right: 20px;
+}
+
+.projects{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.projects > h2{
+    text-align: center;
+}
+
+.projects p{
+    font-size: 1.1em;
+}
+.spotify img{
+    float: left;
+    padding-right: 15px;
+}
+
+.contact-form{
+    width: 40%;
+    margin: 30px auto 0;
+}
+
+.contact-form input[type=text], 
+.contact-form textarea, 
+.contact-form input[type="email"]{
+	width:100%;
+	padding: 8px;
+	margin: 2px;
+}
+
+input[type=submit]:hover{
+	background-color: rgba(0, 174, 255, 0.42);
+}
+
+input[type=submit] {
+	height: 38px;
+	background-color: rgb(79, 127, 138);
+	color: #ffffff;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.contact-page{
+    background-image: url(wood.jpg);
+    width: 85%;
+    margin: 30px auto 0;
+    padding: 20px 0 20px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer{
+	background-color:rgba(0, 174, 255, 0.42);
+	padding-bottom: 5px;
+	padding-top: 10px;
+	margin-top:25px;
+}
+
+.social ul{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style-type: none;
+}
+
+.social h3, .social p{
+    text-align: center;
+}
+
+.social ul li {
+	margin: 0 10px 0 0;
+}
+
+.social p{
+    font-size: 1.2em;
+}

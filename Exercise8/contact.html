@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="assignment.js"></script>
+    <title>Τεχνητή Νοημοσύνη | Επικοινωνία</title>
+</head>
+<body>
+    <header>
+        <h1 id="bigHeader"><a href="index.html">Τεχνητή Νοημοσύνη</a></h1>
+    </header>
+    <nav id="nav-bar">
+        <ul>
+            <li><a href="index.html">Ορισμός</a></li>
+            <li><a href="applications.html">Εφαρμογές</a></li>
+            <li><a href="benefits.html">Οφέλη</a></li>
+            <li class = "current"><a href="contact.html">Επικοινωνία</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2 id="wannaBeDif">Εγγραφή Χρήστη</h2>
+        <p id="styledP" class="contactP">Ακολουθεί μία φόρμα εγγραφής με σημαντικές πληροφορίες.</p>
+        <form action="contact.html" onsubmit="successful()" onchange="validateForm()" method="post" id="registration-form">
+            <fieldset>
+                <legend>Προσωπικές Πληροφορίες</legend>
+                <p>
+                    <label for="fname">Όνομα<span class=req>*</span></label>
+                    <input type="text" id="fname" name="fname" autocomplete="on" required pattern="[\p{L}]+" >
+                </p>
+                <p>
+                    <label for="lname">Επώνυμο<span class=req>*</span></label>
+                    <input type="text" id="lname" name="lname" autocomplete="on" required pattern="[\p{L}]+" >
+                </p>
+                <p>
+                    <label for="email">E-mail<span class=req>*</span></label>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" autocomplete="on" required>
+                </p>
+                <details>
+                    <summary>Γιατί απαιτείται το email σας;</summary>
+                    <p>Για να μπορέσουμε να έρθουμε σε επαφή μαζί σας μετά την υποβολή της φόρμας.</p>
+                </details>
+                <p>
+                    <label for="street">Οδός</label>
+                    <input type="text" id="street" name="street" placeholder="Λ. Πατησίων 76" >
+                </p>
+                <p>
+                    <label for="city">Πόλη</label>
+                    <input type="text" id="city" name="city" placeholder="Αθήνα" pattern="[α-ωΑ-Ωά-ώ]{2,}" >
+                </p>
+                <p>
+                    <label for="zipcode">Ταχυδρομικός Κώδικας</label>
+                    <input type="text" id="zipcode" name="zipcode" placeholder="10431" pattern="[0-9]{3,}" >
+                </p>
+                <p>
+                    <label for="country">Χώρα</label>
+                    <input list="countries" id="country" name="country" >
+                    <datalist id="countries">
+                        <option value="Αγγλία">
+                        <option value="Αλβανία">
+                        <option value="Αρμενία">
+                        <option value="Γαλλία">
+                        <option value="Γερμανία">
+                        <option value="Ελλάδα">
+                        <option value="Ιταλία">
+                        <option value="Κύπρος">       
+                        <option value="Τουρκία">
+                        <option value="Σουηδία">
+                    </datalist>
+                </p>
+                <p>
+                    <label for="birthday">Ημερομηνία Γέννησης<span class=req>*</span></label>
+                    <input type="date" id="birthday" name="birthday" required>
+                </p>
+                <details>
+                    <summary>Γιατί απαιτείται η ημερομηνία γέννησής σας;</summary>
+                    <p>Απαραίτητη προϋπόθεση για να λάβουμε τα στοιχεία σας και να γίνεται μέλος της ομάδας μας 
+                        είναι να είστε άνω των 18 χρονών.</p>
+                </details>
+                <p>
+                    <label for="phone">Tηλέφωνο<span class=req>*</span></label>
+                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" autocomplete="on">
+                </p>
+                <details>
+                    <summary>Γιατί απαιτείται το τηλέφωνό σας;</summary>
+                    <p>Για να μπορέσουμε να έρθουμε σε επαφή μαζί σας μετά την υποβολή της φόρμας.</p>
+                </details>
+                <p>
+                    <label for="message">Σχόλια</label><br>
+                    <textarea name="message" id="message" rows="5" cols="30"></textarea> 
+                </p>
+            </fieldset>
+            <fieldset id="register">
+                <legend>Στοιχεία σύνδεσης</legend>
+                <p>
+                    <label for="username">Όνομα χρήστη<span class=req>*</span></label>
+                    <input type="text" placeholder="Εισαγωγή Username" id="username" name="username" required pattern="[a-z]{8,16}" >
+                    <span>Aπαιτούνται 8-16 πεζοί αγγλικοί χαρακτήρες.</span>
+                </p>
+                <p>
+                    <label for="pass">Κωδικός Πρόσβασης<span class=req>*</span></label>
+                    <input type="password" placeholder="Εισαγωγή password" id="pass" name="pass" required pattern="[a-zA-Z]{8,}"  >
+                    <span>Aπαιτούνται τουλάχιστον 8 χαρακτήρες.</span><br>
+                    <input type="checkbox" id="showpass" name="showpass" onclick="showPassword('pass')">
+                    <label for="showpass">Εμφάνισε κωδικό</label>
+                </p>
+                <p>
+                    <label for="repass">Επανάληψη Κωδικού Πρόσβασης<span class=req>*</span></label>
+                    <input type="password" placeholder="Εισαγωγή password" id="repass" name="repass" required pattern="[a-zA-Z]{8,}" >
+                    <input type="checkbox" id="showrepass" name="showrepass" onclick="showPassword('repass')">
+                    <label for="showrepass">Εμφάνισε κωδικό</label>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Σύντομο ερωτηματολόγιο</legend>
+                <details open>
+                    <summary>Ερωτήσεις γύρω από το χώρο της Πληροφορικής</summary>
+                    <ol>
+                        <li>
+                            <label for="university">Ποιο είναι/ήταν το πανεπιστήμιό σας;</label>
+                            <input list="universities" id="university" name="university" > 
+                            <datalist id="universities">
+                                <option value="Οικονομικό Πανεπιστήμιο Αθηνών">
+                                <option value="ΕΘνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών">
+                                <option value="Πανεπιστήμιο Πειραιά">
+                                <option value="Χαροκόπειο Πανεπιστήμιο">
+                                <option value="Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης">
+                            </datalist>
+                        </li>
+                        <li>
+                            <label for="cs">Πόσα χρόνια ασχολείστε με τον κλάδο της Πληροφορικής;<span class=req>*</span></label>
+                            <input type="number" id="cs" name="cs" min="0" required>
+                        </li>
+                        <li>
+                            <p>Ποιες γλώσσες προγραμματισμού γνωρίζετε;</p>
+                            <input type="checkbox" id="progLang1" name="progLang1">
+                            <label for="progLang1">Java</label><br>
+                            <input type="checkbox" id="progLang2" name="progLang2">
+                            <label for="progLang2">Python</label><br>
+                            <input type="checkbox" id="progLang3" name="progLang3">
+                            <label for="progLang3">C++</label><br>
+                            <input type="checkbox" id="progLang4" name="progLang4">
+                            <label for="progLang4">HTML</label><br>
+                            <input type="checkbox" id="progLang5" name="progLang5">
+                            <label for="progLang5">CSS</label><br>
+                            <input type="checkbox" id="progLang6" name="progLang6">
+                            <label for="progLang6">JavaScript</label><br>
+                            <input type="checkbox" id="progLang7" name="progLang7">
+                            <label for="progLang7">PHP</label>
+                        </li>
+                        <li>
+                            <p>Με ποια από τα παρακάτω έχετε ασχοληθεί;</p>
+                            <input type="checkbox" id="prog1" name="prog1">
+                            <label for="prog1">Intelij</label><br>
+                            <input type="checkbox" id="prog2" name="prog2">
+                            <label for="prog2">PyCharm</label><br>
+                            <input type="checkbox" id="prog3" name="prog3">
+                            <label for="prog3">Visual Studio</label><br>
+                            <input type="checkbox" id="prog4" name="prog4">
+                            <label for="prog4">Visual Studio Code</label><br>
+                            <input type="checkbox" id="prog5" name="prog5">
+                            <label for="prog5">Eclipse</label>
+                        </li>
+                        <li>
+                            <label for="backendLang">Ποια γλώσσα προγραμματισμού θα προτιμούσατε για BackEnd development;</label>
+                            <input list="backendLangs" id="backendLang" name="backendLang" autocomplete="on"> 
+                            <datalist id="backendLangs">
+                                <option value="Java">
+                                <option value="Python">
+                                <option value="JavaScript">
+                                <option value="PHP">
+                            </datalist>
+                        </li>
+                    </ol>
+                </details>
+                <details open>
+                    <summary>Κλάδος Τεχνητής Νοημοσύνης</summary>
+                    <ol>
+                        <li>
+                            <p>Έχετε ασχοληθεί με project Τεχνητής Νοημοσύνης;</p>
+                            <input type="radio" id="itRelationYes" name="itRelation" >
+                            <label for="itRelationYes">Ναι</label>
+                            <input type="radio" id="itRelationNo" name="itRelation">
+                            <label for="itRelationNo">Οχι</label>
+                        </li>
+                        <li>
+                            <p>
+                                <label for="aiAlgorithms">Ποιος είναι ο αγαπημένος σας Αλγόριθμος Τεχνητής Νοημοσύνης;</label>
+                                <select name="aiAlgorithms" id="aiAlgorithms">
+                                    <option disabled selected value> -- Επιλέξτε -- </option>
+                                    <option value="bayes">Bayes</option>
+                                    <option value="logisticRegression">Logistic Regression</option>
+                                    <option value="bayes">ID3</option>
+                                </select>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Ο Λόγος που σας ενδιαφέρει η Τεχνητή Νοημοσύνη είναι:<span class=req>*</span></p>
+                            <input type="radio" id="aiRelationYes" name="aiRelation" required>
+                            <label for="aiRelationYes">Επαγγελματικός</label>
+                            <input type="radio" id="aiRelationNo" name="aiRelation">
+                            <label for="aiRelationNo">Χόμπι</label>
+                        </li>
+                    </ol>
+                </details>   
+                    
+                <details open>
+                    <summary>Λόγος επικοινωνίας & προσωπικότητα</summary>
+                    <ol>
+                        <li>
+                            <p>Ενδιαφέρεστε να επικοινωνήσετε μαζί μας για</p>
+                            <input type="checkbox" id="reason1" name="reason1">
+                            <label for="reason1">Παροχή πληροφοριών</label><br>
+                            <input type="checkbox" id="reason2" name="reason2">
+                            <label for="reason2">Συνεργασία</label><br>
+                            <input type="checkbox" id="reason3" name="reason3">
+                            <label for="reason3">Πρόταση ιδέας</label><br>
+                            <input type="checkbox" id="reason4" name="reason4">
+                            <label for="reason4">Συνεισφορά στην έρευνα</label>
+                        </li>
+                        
+                        <li>
+                            <p>Ποια από τα ακόλουθα σας χαρακτηρίζουν:</p>
+                            <input type="checkbox" id="personality1" name="personality1">
+                            <label for="personality1">Αναλυτική σκέψη</label><br>
+                            <input type="checkbox" id="personality2" name="personality2">
+                            <label for="personality2">Οργάνωση</label><br>
+                            <input type="checkbox" id="personality3" name="personality3">
+                            <label for="personality3">Επίλυση προβλημάτων</label><br>
+                            <input type="checkbox" id="personality4" name="personality4">
+                            <label for="personality4">Ικανότητα ομαδικής συνεργασίας</label>
+                        </li>
+                    </ol>
+                </details>   
+            </fieldset>
+            <p class="req">*Υποχρεωτικά πεδία</p>
+            <input type="submit" value="Υποβολή">
+        </form>
+    </main>
+    
+    <aside class="aside-bar">
+        <button onclick="changeBackgroundColor()" class="btn">NIGHT MODE</button>
+        <p>
+            <q id="quote" cite="https://www.brainyquote.com/quotes/spike_jonze_691466">
+                Is artificial intelligence less than our intelligence?
+            </q> Spike Jonze
+        </p>
+    </aside>
+    <footer>
+        <p>Copyright &copy; 2021, <strong>Ηρακλής Χρύσανθος</strong></p>
+    </footer>
+</body>
+</html>
